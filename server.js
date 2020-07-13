@@ -1,10 +1,13 @@
-const http = require('http')
+const http = require('http');
+const html = require('fs').readFileSync('views/index.html');
 
 
 const server = http.createServer((req, res) => {
+
     // contents
     res.writeHead(200, {'Content-Type' : 'text/html; charset=utf-8'});
-    res.write('<h2>Hello World!</h1>');
+    res.end(html);
+
 });
 
 
